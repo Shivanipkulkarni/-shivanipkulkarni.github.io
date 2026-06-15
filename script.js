@@ -35,3 +35,20 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// Mouse-follow spotlight effect
+const spotlight = document.getElementById("spotlight");
+
+if (spotlight) {
+  document.addEventListener("mousemove", (e) => {
+    spotlight.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+  });
+
+  document.addEventListener("mouseleave", () => {
+    spotlight.style.opacity = "0";
+  });
+
+  document.addEventListener("mouseenter", () => {
+    spotlight.style.opacity = "1";
+  });
+}
